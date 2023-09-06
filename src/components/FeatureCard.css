@@ -1,0 +1,9 @@
+.hoverable:hover {
+    background-image: url('../img/mainlogo.PNG');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+        background: linear-gradient(rgba(163, 153, 212, 0.4), rgba(163, 153, 212, 0.4)); 
+  
+   }
+
