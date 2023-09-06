@@ -5,14 +5,14 @@ const Footer = () => {
     <footer className="text-gray-600 body-font border border-t-2">
       <div className="container px-5 py-24 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col">
         <div className="w-64 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left">
-          <a className="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
+          <button className="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
           <img
               src={logo} 
               alt="Logo"
               className="w-10 h-10 rounded-full"
             />
             <span className="ml-3 text-xl">Suit Yourself</span>
-          </a>
+          </button>
           <p className="mt-2 text-sm text-gray-500">
           Elevate your wardrobe with the perfect blend
           </p>
@@ -24,7 +24,7 @@ const Footer = () => {
             </h2>
             <nav className="list-none mb-10">
               <li>
-                <a className="text-gray-600 hover:text-gray-800">+92 3340005197</a>
+                <button className="text-gray-600 hover:text-gray-800">+92 3340005197</button>
               </li>
               <li>
               <a className="text-gray-600 hover:text-gray-800" href="mailto:fajrnaveed5197@gmail.com">
@@ -56,6 +56,7 @@ const Footer = () => {
               rel="noopener noreferrer"
               className="text-gray-600 ml-1"
               target="_blank"
+             
             >
               @fajrnaveed5197
             </a>

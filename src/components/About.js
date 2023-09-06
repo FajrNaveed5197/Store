@@ -30,6 +30,7 @@ const About = () => {
           <a
             href="https://instagram.com/fajr_naveed0__0?igshid=OGQ5ZDc2ODk2ZA=="
             target="_blank"
+            rel="noreferrer"
           >
             <svg
               className="h-10 w-10 text-gray-300 hover:text-gray-100 transition"
@@ -43,8 +44,11 @@ const About = () => {
           </a>
           {/* <!-- linkedin --> */}
           <a
+          
             href="https://www.linkedin.com/in/fajr-naveed-675b91239/"
+
             target="_blank"
+            rel="noreferrer"
           >
             <svg
               className="h-10 w-10 text-gray-300 hover:text-gray-100 transition"
