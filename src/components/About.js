@@ -63,7 +63,7 @@ const About = () => {
             </svg>
           </a>
           {/* <!-- github --> */}
-          <a href="https://github.com/your-github-username" target="_blank">
+          <a href="https://github.com/your-github-username" target="_blank" rel="noreferrer">
             <svg
               className="h-10 w-10 text-gray-300 hover:text-gray-100 transition"
               fill="currentColor"
