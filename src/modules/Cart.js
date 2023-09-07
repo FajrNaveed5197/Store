@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useMemo } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-
+import 'bootstrap/dist/css/bootstrap-grid.min.css';
 const Cart = () => {
   const navigate = useNavigate();
   const [total, setTotal] = useState(0);
@@ -17,39 +17,60 @@ const Cart = () => {
     setTotal(newTotal);
   }, [carts]);
 
-  const handleInc = (id) => {
-    const updatedCart = carts.map((item) => {
-      if (item.id === id) {
-        return {
-          ...item,
-          quantity: item.quantity + 1,
-        };
-      }
-      return item;
-    });
-    localStorage.setItem('cart', JSON.stringify(updatedCart));
-    navigate('/cart');
-  };
+ const handleInc = async (id) => {
+  const updatedCart = carts.map((item) => {
+    if (item.id === id) {
+      return {
+        ...item,
+        quantity: item.quantity + 1,
+      };
+    }
+    return item;
+  });
+  // Update cart in localStorage
+  localStorage.setItem('cart', JSON.stringify(updatedCart));
+  // Wait for the localStorage update to complete, then navigate
+  await new Promise((resolve) => setTimeout(resolve, 0));
+  navigate('/cart');
+};
 
-  const handleDec = (id) => {
-    const updatedCart = carts.map((item) => {
-      if (item.id === id && item.quantity > 1) {
-        return {
-          ...item,
-          quantity: item.quantity - 1,
-        };
-      }
-      return item;
-    });
-    localStorage.setItem('cart', JSON.stringify(updatedCart));
-    navigate('/cart');
-  };
+const handleDec = async (id) => {
+  const updatedCart = carts.map((item) => {
+    if (item.id === id && item.quantity > 1) {
+      return {
+        ...item,
+        quantity: item.quantity - 1,
+      };
+    }
+    return item;
+  });
+  // Update cart in localStorage
+  localStorage.setItem('cart', JSON.stringify(updatedCart));
+  // Wait for the localStorage update to complete, then navigate
+  await new Promise((resolve) => setTimeout(resolve, 0));
+  navigate('/cart');
+};
 
-  const removeProduct = (id) => {
-    const updatedCart = carts.filter((item) => item.id !== id);
-    localStorage.setItem('cart', JSON.stringify(updatedCart));
+
+const removeProduct = (id) => {
+  // Use JSON.parse to get the cart items from localStorage
+  const currentCart = JSON.parse(localStorage.getItem('cart'));
+
+  // Check if the item exists in the cart
+  const itemIndex = currentCart.findIndex((item) => item.id === id);
+
+  if (itemIndex !== -1) {
+    // If the item exists, remove it from the cart array
+    currentCart.splice(itemIndex, 1);
+
+    // Update the cart in localStorage
+    localStorage.setItem('cart', JSON.stringify(currentCart));
+
+    // Navigate back to the cart page
     navigate('/cart');
-  };
+  }
+};
+
 
   if (carts.length === 0) {
     return (
@@ -62,7 +83,9 @@ const Cart = () => {
   return (
     <div className="container mx-auto mt-10">
       <div className="flex shadow-md my-10">
-        <div className="w-3/4 bg-white px-10 py-10">
+      <div className="row">
+
+        <div className="col-lg-8 w-3/4 bg-white px-10 py-10">
           <div className="flex justify-between border-b pb-8">
             <h1 className="font-semibold text-2xl">Shopping Cart</h1>
             <h2 className="font-semibold text-2xl">{carts.length} Items</h2>
@@ -150,7 +173,7 @@ const Cart = () => {
           </Link>
         </div>
 
-        <div id="summary" className="w-1/4 px-8 py-10">
+        <div id="summary" className="col-lg-4 w-1/4 px-8 py-10">
           <h1 className="font-semibold text-2xl border-b pb-8">Order Summary</h1>
           <div className="flex justify-between mt-10 mb-5">
             <span className="font-semibold text-sm uppercase">
@@ -193,6 +216,9 @@ const Cart = () => {
             </button>
           </div>
         </div>
+
+        </div>
+
       </div>
     </div>
   );

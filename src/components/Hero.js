@@ -14,7 +14,7 @@ const Hero = () => {
       ></div>
       <div className="container mx-auto flex flex-col items-center justify-center text-center h-full" >
        
-        <p className=" leading-relaxed bg-opacity-80 p-5 rounded-md bg-white text-xl font-bold" style={{marginTop:"450px"}} >
+        <p className=" leading-relaxed bg-opacity-80 p-5 rounded-md bg-white text-xl font-bold" style={{marginTop:"40%"}} >
           Welcome to SuitYourself, your destination for exquisite style.
           Explore our curated collection of tailored suits, sophisticated
           accessories, and timeless fashion. Elevate your wardrobe with the
