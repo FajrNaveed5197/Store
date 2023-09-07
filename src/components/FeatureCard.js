@@ -19,6 +19,7 @@ const FeatureCard = ({ cards = [1, 4, 6] }) => {
               <Link
               to={`/categories/${card}`}
               key={index} 
+              style={{textDecoration:"none"}}
               className="p-4 md:w-1/3 cursor-pointer relative"  
             >
               <div className="flex rounded-lg bg-gray-100 p-6 flex-col items-center justify-center hoverable" style={{ borderRadius: '15px 200px 15px 200px' }}>

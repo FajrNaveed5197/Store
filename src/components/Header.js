@@ -33,6 +33,7 @@ const Header = () => {
       <header className="text-gray-600 body-font shadow-lg">
         <div className="container mx-auto flex flex-wrap p-3 flex-col md:flex-row items-center">
           <Link
+          style={{textDecoration:"none"}}
             to={"/"}
             className="flex cursor-pointer order-first lg:order-none lg:w-1/5 title-font font-medium items-center text-gray-900 lg:items-center lg:justify-center mb-4 md:mb-0"
           >
@@ -70,6 +71,7 @@ const Header = () => {
           >
             {navigations.map((navigation) => (
               <Link
+              style={{textDecoration:"none"}}
                 to={navigation.path}
                 key={navigation.name}
                 className="mr-5 hover:text-gray-900"
@@ -78,9 +80,10 @@ const Header = () => {
               </Link>
             ))}
             <Link
+            style={{textDecoration:"none",marginLeft:"40%"}}
               to={"/cart"}
               className="inline-flex items-center bg-purple-400 text-white border-0 py-2 px-4 focus:outline-none hover:bg-indigo-700 rounded text-base mt-4 md:mt-0"
-            style={{marginLeft:"40%"}}>
+           >
               
               Go to Cart
               <svg

@@ -18,7 +18,7 @@ const Product = ({ products = [] }) => {
                 className="lg:w-1/4 md:w-1/2 p-4 w-full border border-opacity-50 mb-4 ml-4 mr-4 cursor-pointer" 
                 key={id}
               >
-                <Link to={`/product/${id}`} >
+                <Link to={`/product/${id}`} style={{textDecoration:"none"}} >
                   <div className="block relative h-48 rounded overflow-hidden">
                     <img
                       alt={title}

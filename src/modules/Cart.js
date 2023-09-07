@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useMemo } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import 'bootstrap/dist/css/bootstrap-grid.min.css';
+import "bootstrap/dist/css/bootstrap.min.css";
 const Cart = () => {
   const navigate = useNavigate();
   const [total, setTotal] = useState(0);
@@ -160,7 +160,7 @@ const removeProduct = (id) => {
             );
           })}
 
-          <Link to={'/products'} className="flex font-semibold text-indigo-600 text-sm mt-10">
+          <Link to={'/products'} className="flex font-semibold text-indigo-600 text-sm mt-10" style={{textDecoration:"none"}}>
             <svg
               className="fill-current mr-2 text-indigo-600 w-4"
               viewBox="0 0 448 512"
